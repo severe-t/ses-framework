@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7kkd3kc7hv4c"
+path="res://.godot/imported/9mm-pistol-shot-6349.mp3-58cef5f5f42acc1bf1dc24a93da6ad3a.mp3str"
+
+[deps]
+
+source_file="res://assets/sound effects/9mm-pistol-shot-6349.mp3"
+dest_files=["res://.godot/imported/9mm-pistol-shot-6349.mp3-58cef5f5f42acc1bf1dc24a93da6ad3a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
