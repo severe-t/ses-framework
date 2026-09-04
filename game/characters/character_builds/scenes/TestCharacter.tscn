@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bstpndwmrby4a"]
+
+[ext_resource type="PackedScene" path="res://game/characters/character modules/modules/HealthModule.tscn" id="1_bqvxe"]
+[ext_resource type="Script" path="res://game/characters/character base/test_character.gd" id="1_pcbw0"]
+[ext_resource type="PackedScene" path="res://game/characters/character modules/modules/PlayerControlModule.tscn" id="2_1a7bh"]
+[ext_resource type="PackedScene" path="res://game/characters/character modules/modules/MovementModule.tscn" id="3_ojuip"]
+[ext_resource type="PackedScene" path="res://game/characters/character modules/modules/HurtboxModule.tscn" id="4_juefp"]
+[ext_resource type="Texture2D" path="res://game assets/sprites/test sprites/player.png" id="5_l0cqi"]
+[ext_resource type="PackedScene" path="res://game/weapons/guns/pistol.tscn" id="7_rjo74"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7gv6e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ccoht"]
+
+[node name="TestCharacter" type="CharacterBody2D" unique_id=1655293465]
+motion_mode = 1
+script = ExtResource("1_pcbw0")
+
+[node name="HealthModule" parent="." unique_id=1135553841 node_paths=PackedStringArray("parent") instance=ExtResource("1_bqvxe")]
+parent = NodePath("..")
+value = 10.0
+max_value = 10.0
+
+[node name="PlayerControlModule" parent="." unique_id=861485653 node_paths=PackedStringArray("parent") instance=ExtResource("2_1a7bh")]
+parent = NodePath("..")
+
+[node name="MovementModule" parent="." unique_id=328269422 node_paths=PackedStringArray("parent", "input_source") instance=ExtResource("3_ojuip")]
+parent = NodePath("..")
+input_source = NodePath("../PlayerControlModule")
+speed = 1000
+acceleration = 100
+
+[node name="HurtboxModule" parent="." unique_id=1044053880 node_paths=PackedStringArray("Parent", "health_module") instance=ExtResource("4_juefp")]
+Parent = NodePath("..")
+health_module = NodePath("../HealthModule")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxModule" unique_id=1139292304]
+scale = Vector2(0.305, 0.305)
+shape = SubResource("CircleShape2D_7gv6e")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1835045092]
+position = Vector2(0.345, 0)
+rotation = 1.5707964
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("5_l0cqi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=691608133]
+scale = Vector2(0.315, 0.315)
+shape = SubResource("CircleShape2D_ccoht")
+
+[node name="Pistol" parent="." unique_id=1415381158 node_paths=PackedStringArray("parent", "input_source") instance=ExtResource("7_rjo74")]
+rotation = -1.5707964
+parent = NodePath("..")
+input_source = NodePath("../PlayerControlModule")
+ammo_capacity = 6
+reload_time = 2.0
+projectile_speed = 3000.0

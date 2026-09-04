@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://by3vjkun8xjde"]
+
+[ext_resource type="Script" path="res://game/characters/character modules/scripts/health_module.gd" id="1_drp2j"]
+
+[node name="HealthModule" type="Node"]
+script = ExtResource("1_drp2j")

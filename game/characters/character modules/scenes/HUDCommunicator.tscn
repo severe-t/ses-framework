@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgsmak7pwdlky"]
+
+[sub_resource type="GDScript" id="GDScript_axs1y"]
+script/source = "extends CharacterModule
+class_name HUDCommunicator
+
+
+@export var parent: CharacterBody2D
+@export var sources := [CharacterModule]
+#	UUS ARRAY JOKA PERUSTUU SOURCESIIN??????? MEEN PASKALLE MORO
+
+func _process(_delta):
+
+	pass
+
+func update_sources():
+	pass
+
+func hud_update(id, data):
+	SignalManager.update_hud(id, data)
+
+
+\"\"\"
+
+
+
+\"\"\""
+
+[node name="HudCommunicator" type="Node"]
+script = SubResource("GDScript_axs1y")

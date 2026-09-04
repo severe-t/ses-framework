@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6rt73imyqjf2"
+path="res://.godot/imported/Punch Sound Effect.mp3-879e5e069e1602a099948d7d935e51e0.mp3str"
+
+[deps]
+
+source_file="res://game/assets/sfx sound_effects/Punch Sound Effect.mp3"
+dest_files=["res://.godot/imported/Punch Sound Effect.mp3-879e5e069e1602a099948d7d935e51e0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

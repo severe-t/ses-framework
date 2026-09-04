@@ -14,13 +14,18 @@ config/name="FvMGG (SES-Framework)"
 config/version="0.1"
 run/main_scene="uid://ddrwex1a6a73x"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://sestem/icon.svg"
+config/icon="res://ses framework/icon.svg"
 
 [autoload]
 
+GameIndex="*uid://bvj115ip7ia6x"
 Ses="*uid://1vb288mr6cx6"
 Console="*uid://lvu5lukynfbv"
 AudioManager="*uid://wc10v20j7y35"
+
+[debug]
+
+gdscript/warnings/integer_division=0
 
 [display]
 

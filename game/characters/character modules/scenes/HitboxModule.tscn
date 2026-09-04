@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://du3jfl6qwyb0h"]
+
+[ext_resource type="Script" path="res://game/characters/character modules/scripts/hitbox_module.gd" id="1_uuiub"]
+
+[node name="HitboxModule" type="Area2D"]
+scale = Vector2(10, 10)
+script = ExtResource("1_uuiub")
