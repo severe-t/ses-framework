@@ -22,6 +22,7 @@ enum Category {
 	SFX,
 	BGM,
 	BGS,
+	ABILITY_SHEET,
 }
 
 const _paths: Dictionary = {
@@ -36,6 +37,7 @@ const _paths: Dictionary = {
 	Category.SFX: "res://game/assets/sfx sound_effects/",
 	Category.BGM: "res://game/assets/bgm soundtracks/",
 	Category.BGS: "res://game/assets/bgs background_sounds/",
+	Category.ABILITY_SHEET: "res://game/characters/ability sheets/saved sheets/"
 }
 
 enum {
@@ -134,3 +136,8 @@ const _data: Dictionary[String, String] = {
 	"test_8": "res://scenes/gui/menus/test_menu.tscn",
 	"test_9": "res://scenes/gui/menus/test_menu.tscn",
 }
+
+
+
+var abilities: Dictionary	#	Preload path
+var ability_preloads: Dictionary	#	Preload path

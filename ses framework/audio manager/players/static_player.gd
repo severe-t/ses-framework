@@ -19,8 +19,8 @@ enum StartMode{
 
 var selected_start_mode: StartMode
 
-var bgm_id: Bgm.id
-var bgs_id: Bgs.id
+var bgm_id: Bgm.ids
+var bgs_id: Bgs.ids
 
 var selected_mode: Mode
 var end_of_track_setting: EndOfTrackSetting
@@ -45,9 +45,12 @@ signal bgs_finished
 
 
 func _ready():
-	_track_volume = original_res_volume * volume_modifier
+#	_track_volume = original_res_volume * volume_modifier
 	finished.connect(_on_end)
 
+func init_track_volume():
+	_track_volume = original_res_volume * volume_modifier
+	pass
 
 func set_volume(vol: float):#	Hyi vittu mitä paskaa
 	volume_modifier = vol
@@ -76,19 +79,14 @@ func unmute():
 	volume_db = linear_to_db(_track_volume)
 
 func fade_in(duration: float):
-	volume_db = linear_to_db(0.0)
+	volume_db = linear_to_db(0.001)
 	play()
 	fade_volume_in(duration)
-
-
-func fade_out(duration):
-	_prevent_tween_override = true
-	fade_volume_out(duration, true)
-
 
 func fade_volume_in(duration: float):
 	_kill_tween()
 	_active_tween = create_tween()
+	_active_tween_duration = duration
 	_active_tween.tween_method(
 		func(linear_vol: float): volume_db = linear_to_db(linear_vol),
 		volume_linear,
@@ -96,6 +94,9 @@ func fade_volume_in(duration: float):
 		duration
 	).set_trans(Tween.TRANS_SINE)
 
+func fade_out(duration):
+	_prevent_tween_override = true
+	fade_volume_out(duration, true)
 
 func fade_volume_out(duration: float, kill_after: bool = false):
 	_kill_tween()

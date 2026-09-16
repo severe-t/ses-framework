@@ -2,12 +2,12 @@ extends Resource
 class_name SoundEffect
 
 
-enum id {
+enum ids {
 REVOLVER_DEFAULT,
 GUN_EMPTY,
 }
 
-@export var selected_id: id
+@export var selected_id: ids
 @export var sound_file: AudioStreamMP3
 @export_range(0, 10) var limit: int = 5
 @export_range(-40, 20) var volume: float = 0

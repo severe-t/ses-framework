@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://uovdlemh05qv"]
+
+[ext_resource type="Script" uid="uid://cs5c8g16c6unt" path="res://game/characters/base classes/modular character/modular_character.gd" id="1_ygd5a"]
+[ext_resource type="PackedScene" uid="uid://by3vjkun8xjde" path="res://game/characters/character modules/scenes/HealthModule.tscn" id="2_f6atd"]
+[ext_resource type="PackedScene" uid="uid://d0v3r03qtpxv1" path="res://game/characters/character modules/scenes/HurtboxModule.tscn" id="3_yomxm"]
+[ext_resource type="PackedScene" uid="uid://b3jtf0i16k6yn" path="res://game/characters/character modules/scenes/MovementModule.tscn" id="4_un0we"]
+[ext_resource type="PackedScene" uid="uid://cs4u0c3103it4" path="res://game/characters/character modules/scenes/HandsModule.tscn" id="5_2uwej"]
+
+[node name="ModularCharacter" type="CharacterBody2D" unique_id=71842574 node_paths=PackedStringArray("health_module", "hurtbox_module", "movement_module")]
+script = ExtResource("1_ygd5a")
+use_player_input = true
+health_module = NodePath("HealthModule")
+hurtbox_module = NodePath("HurtboxModule")
+movement_module = NodePath("MovementModule")
+
+[node name="HealthModule" parent="." unique_id=855856564 instance=ExtResource("2_f6atd")]
+
+[node name="HurtboxModule" parent="." unique_id=1600100311 instance=ExtResource("3_yomxm")]
+
+[node name="MovementModule" parent="." unique_id=1257682665 instance=ExtResource("4_un0we")]
+
+[node name="HandsModule" parent="." unique_id=1886839405 instance=ExtResource("5_2uwej")]

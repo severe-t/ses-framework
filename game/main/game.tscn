@@ -33,7 +33,17 @@ menus = Array[ExtResource("3_0fqga")]([SubResource("Resource_vsost"), SubResourc
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameplayLayer" unique_id=1157908464]
 shape = SubResource("RectangleShape2D_63c7r")
 
-[node name="GuiLayer" type="Control" parent="." unique_id=2110290746]
+[node name="HudCanvasLayer" type="CanvasLayer" parent="." unique_id=136368108]
+
+[node name="Hud" type="Control" parent="HudCanvasLayer" unique_id=2043936851]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GuiCanvasLayer" type="CanvasLayer" parent="." unique_id=406008705]
+
+[node name="GuiLayer" type="Control" parent="GuiCanvasLayer" unique_id=2110290746]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

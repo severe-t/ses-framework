@@ -50,3 +50,8 @@ func run(argument_strings: PackedStringArray):
 		var empty_arguments: PackedStringArray = []
 		command_callable.call()
 		command_ran.emit(empty_arguments)
+
+
+func _recursive_run(argument_strings: PackedStringArray):
+
+	pass

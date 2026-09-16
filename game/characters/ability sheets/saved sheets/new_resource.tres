@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AbilitySheet" format=3 uid="uid://dunjfjwbliui2"]
+
+[ext_resource type="Script" uid="uid://0fyjihlpmqwt" path="res://game/characters/ability sheets/base_class/ability_sheet_base.gd" id="1_kaovw"]
+
+[resource]
+script = ExtResource("1_kaovw")
+sheet_name = "jesse test"
+ability_fire_primary = 1
+ability_fire_secondary = 2
+ability_ability_primary = 5
+ability_ability_secondary = 7
+ability_ability_defensive = 4
+ability_ability_ultimate = 3
+metadata/_custom_type_script = "uid://0fyjihlpmqwt"

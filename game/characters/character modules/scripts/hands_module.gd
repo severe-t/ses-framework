@@ -1,6 +1,6 @@
 extends CharacterModule
 class_name HandsModule
-
+"""
 @export var input_source: ControlModule
 @export var equipped_weapon: Weapon
 
@@ -21,3 +21,5 @@ func equip_fists():
 
 func switch_weapons():
 	pass
+
+"""

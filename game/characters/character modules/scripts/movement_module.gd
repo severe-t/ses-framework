@@ -8,7 +8,7 @@ enum AccelerationModes{
 
 
 @export var parent: CharacterBody2D
-@export var input_source: ControlModule
+@export var input_source: ModularCharacter
 @export var print_velocity: bool
 
 @export var acceleration_mode: AccelerationModes
@@ -23,9 +23,17 @@ var input : Vector2
 func _process(_delta):
 	move(_delta)
 
-	
+
+func speed_boost(value, time):
+
+	pass
 
 	
+func speed_boost_decaying(value, time):
+
+	pass
+
+
 func move(delta):
 	match acceleration_mode:
 		AccelerationModes.OFF:

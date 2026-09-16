@@ -1,7 +1,7 @@
 extends StaticAudio
 class_name Bgs
 
-enum id{
+enum ids{
 DESERT,
 CITY,
 RAIN,
@@ -9,6 +9,6 @@ RAIN,
 
 
 
-@export var selected_id: id
+@export var selected_id: ids
 
 

@@ -45,27 +45,6 @@ grow_vertical = 2
 scale = Vector2(0.99, 0.99)
 color = Color(0, 0, 0, 1)
 
-[node name="Button2" type="Button" parent="ColorRect2" unique_id=638148918]
-layout_mode = 0
-offset_left = 897.0
-offset_top = 388.0
-offset_right = 1050.0
-offset_bottom = 496.0
-theme_override_colors/font_color = Color(0.21962553, 0.4457081, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0.9286411, 2.5509298e-06, 1.540184e-06, 1)
-theme_override_colors/icon_focus_color = Color(0.82158864, 0.000531556, 0.8215831, 1)
-theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/icon_hover_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_50m02")
-theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxFlat_x25x4")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_o4noo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_50m02")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_oulqw")
-text = "BANG2"
-
 [node name="Label" type="Label" parent="." unique_id=690393446]
 layout_mode = 0
 offset_left = 45.0
@@ -97,6 +76,27 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_oulqw")
 text = "BANG"
 script = ExtResource("2_x25x4")
 
+[node name="Button2" type="Button" parent="." unique_id=638148918]
+layout_mode = 0
+offset_left = 897.815
+offset_top = 390.72
+offset_right = 1077.815
+offset_bottom = 498.72
+theme_override_colors/font_color = Color(0.21962553, 0.4457081, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0.9286411, 2.5509298e-06, 1.540184e-06, 1)
+theme_override_colors/icon_focus_color = Color(0.82158864, 0.000531556, 0.8215831, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_50m02")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_x25x4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o4noo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_50m02")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_oulqw")
+text = "BANG2"
+
 [node name="Button3" type="Button" parent="." unique_id=1387985710]
 layout_mode = 0
 offset_left = 411.0
@@ -119,4 +119,5 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_oulqw")
 text = "MUSIC"
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="Button" method="_on_button_3_pressed"]
