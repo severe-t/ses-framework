@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="AbilitySheet" format=3 uid="uid://dunjfjwbliui2"]
 
-[ext_resource type="Script" uid="uid://0fyjihlpmqwt" path="res://game/characters/ability sheets/base_class/ability_sheet_base.gd" id="1_kaovw"]
+[ext_resource type="Script" uid="uid://0fyjihlpmqwt" path="res://game/characters/base classes/ability_sheet_base.gd" id="1_5j28m"]
 
 [resource]
-script = ExtResource("1_kaovw")
+script = ExtResource("1_5j28m")
 sheet_name = "jesse test"
 ability_fire_primary = 1
 ability_fire_secondary = 2

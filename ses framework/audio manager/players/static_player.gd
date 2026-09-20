@@ -19,8 +19,8 @@ enum StartMode{
 
 var selected_start_mode: StartMode
 
-var bgm_id: Bgm.ids
-var bgs_id: Bgs.ids
+var bgm_id: Bgm.id
+var bgs_id: Bgs.id
 
 var selected_mode: Mode
 var end_of_track_setting: EndOfTrackSetting

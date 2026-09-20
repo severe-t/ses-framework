@@ -1,12 +1,12 @@
 extends StaticAudio
 class_name Bgm
 
-enum ids{
+enum id{
 MAIN_MENU,
 LEVEL_1,
 }
 
 
-@export var selected_id: ids
+@export var selected_id: id
 
 

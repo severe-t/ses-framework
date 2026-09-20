@@ -5,10 +5,12 @@ extends Node
 #@onready var GuiLayer = $%UiEnvironment
 #@onready var menu_manager = $%MenuManager
 
-var main
+var root
 var GameplayLayer
 var GuiLayer
+var Hud
 var menu_manager
+@export var paths: Paths
 
 var uses_signals = true
 var thread: Thread
@@ -27,11 +29,13 @@ var level_dict: Dictionary = {}
 var menu_dict: Dictionary = {}
 
 func _ready() -> void:
-	main = self
-	GameplayLayer = $GameplayLayer
-	GuiLayer = $GuiLayer
+	root = self
+	GameplayLayer = $%GameplayLayer
+	GuiLayer = $%GuiLayer
+	Hud = $%Hud
+	
+	
 	#menu_manager = $%MenuManager
-
 	GuiLayer.mouse_filter = Control.MOUSE_FILTER_IGNORE
 #	menu_manager.mouse_filter = Control.MOUSE_FILTER_IGNORE
 #	load_menu("test_menu")

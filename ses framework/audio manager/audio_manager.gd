@@ -15,9 +15,9 @@ TODO:
 
 
 """
-var sound_effect_string_dict: Dictionary[String, SoundEffect.ids]
-var bgm_string_dict: Dictionary[String, Bgm.ids]
-var bgs_string_dict: Dictionary[String, Bgs.ids]
+var sound_effect_string_dict: Dictionary[String, SoundEffect.id]
+var bgm_string_dict: Dictionary[String, Bgm.id]
+var bgs_string_dict: Dictionary[String, Bgs.id]
 
 var sound_effect_dict: Dictionary = {} ## Loads all registered SoundEffects on ready as a reference.
 var background_music_dict: Dictionary = {}
@@ -40,7 +40,7 @@ var bgs_history: Array[int]
 var rolling_numbers: Array[int]
 
 var current_bgm: StaticPlayer
-var current_bgs: Dictionary[Bgs.ids, StaticPlayer]
+var current_bgs: Dictionary[Bgs.id, StaticPlayer]
 
 
 func _ready() -> void:
@@ -82,19 +82,9 @@ func roll_number(sound_effect: SoundEffect) -> int:
 func spike_prevention(sound_effect: SoundEffect, number: int) -> void:
 	kill_audio_player.emit(sound_effect.selected_id, number)
 
-"""
-func play_se(se_id: SoundEffect.ids, location = 0) -> void:
-	if location is int and location == 0:
-		_play_se_1d(se_id)
-	elif location is Vector2:
-		_play_se_2d(se_id, location)
-	else:
-		return
-"""
 
 
-
-func play_se(se_id: SoundEffect.ids) -> void:
+func play_se(se_id: SoundEffect.id) -> void:
 	if sound_effect_dict.has(se_id):
 		var sound_effect: SoundEffect = sound_effect_dict[se_id]
 		var new_audio: CustomAudioStreamPlayer = CustomAudioStreamPlayer.new()
@@ -114,7 +104,7 @@ func play_se(se_id: SoundEffect.ids) -> void:
 
 
 
-func play_se_2d(se_id: SoundEffect.ids, location: Vector2) -> void:
+func play_se_2d(se_id: SoundEffect.id, location: Vector2) -> void:
 	if sound_effect_dict.has(se_id):
 		var sound_effect: SoundEffect = sound_effect_dict[se_id]
 		var new_audio: AudioStreamPlayer2D = CustomAudioStreamPlayer2D.new()
@@ -138,7 +128,7 @@ func play_se_2d(se_id: SoundEffect.ids, location: Vector2) -> void:
 
 
 
-func play_bgm(bgm_id: Bgm.ids, volume_modifier: float = 1) -> void:
+func play_bgm(bgm_id: Bgm.id, volume_modifier: float = 1) -> void:
 	if background_music_dict.has(bgm_id):
 		var selected_track: Bgm = background_music_dict[bgm_id]
 		var new_static_player: StaticPlayer = StaticPlayer.new()
@@ -155,7 +145,7 @@ func play_bgm(bgm_id: Bgm.ids, volume_modifier: float = 1) -> void:
 		new_static_player.init_track_volume()
 		new_static_player.play()
 
-func fade_in_bgm(bgm_id: Bgm.ids, duration: float, volume_modifier: float = 1) -> void:
+func fade_in_bgm(bgm_id: Bgm.id, duration: float, volume_modifier: float = 1) -> void:
 	if background_music_dict.has(bgm_id):
 		var selected_track: Bgm = background_music_dict[bgm_id]
 		var new_static_player: StaticPlayer = StaticPlayer.new()
@@ -212,7 +202,7 @@ func _on_bgm_finished() -> void:
 	current_bgm = null
 
 
-func play_bgs(bgs_id: Bgs.ids, volume_modifier: float = 1) -> void:
+func play_bgs(bgs_id: Bgs.id, volume_modifier: float = 1) -> void:
 	if background_sound_dict.has(bgs_id):
 		var selected_track: Bgs = background_sound_dict[bgs_id]
 		var new_static_player: StaticPlayer = StaticPlayer.new()
@@ -260,17 +250,17 @@ func _on_bgs_finished(bgs_id) -> void:
 
 
 func init_string_id_dicts() -> void:
-	for str_id in SoundEffect.ids:
-		var int_id: int = SoundEffect.ids[str_id]
-		sound_effect_string_dict[str_id] = int_id as SoundEffect.ids
+	for str_id in SoundEffect.id:
+		var int_id: int = SoundEffect.id[str_id]
+		sound_effect_string_dict[str_id] = int_id as SoundEffect.id
 
-	for str_id in Bgm.ids:
-		var int_id: int = Bgm.ids[str_id]
-		bgm_string_dict[str_id] = int_id as Bgm.ids
+	for str_id in Bgm.id:
+		var int_id: int = Bgm.id[str_id]
+		bgm_string_dict[str_id] = int_id as Bgm.id
 
-	for str_id in Bgs.ids:
-		var int_id: int = Bgs.ids[str_id]
-		bgs_string_dict[str_id] = int_id as Bgs.ids
+	for str_id in Bgs.id:
+		var int_id: int = Bgs.id[str_id]
+		bgs_string_dict[str_id] = int_id as Bgs.id
 
 
 func parse_text_argument(text_input: String, string_dict_type: int) -> int:	#	0 = se, 1 = bgm, 2 = bgs

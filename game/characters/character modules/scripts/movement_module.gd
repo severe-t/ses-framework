@@ -8,7 +8,7 @@ enum AccelerationModes{
 
 
 @export var parent: CharacterBody2D
-@export var input_source: ModularCharacter
+@export var input_source: ControlModule
 @export var print_velocity: bool
 
 @export var acceleration_mode: AccelerationModes
@@ -19,27 +19,37 @@ var last_measurement: Vector2
 
 var input : Vector2
 
+var movement_function: Callable
+
+
+
+
+
+func _module_ready():	
+	match acceleration_mode:
+		AccelerationModes.OFF:
+			movement_function = movement_without_acceleration
+		AccelerationModes.LINEAR:
+			movement_function = movement_with_linear_acceleration
+
+
 
 func _process(_delta):
 	move(_delta)
 
 
-func speed_boost(value, time):
+func speed_boost(value, duration):
 
 	pass
 
 	
-func speed_boost_decaying(value, time):
+func speed_boost_decaying(value, duration):
 
 	pass
 
 
-func move(delta):
-	match acceleration_mode:
-		AccelerationModes.OFF:
-			movement_without_acceleration(delta)
-		AccelerationModes.LINEAR:
-			movement_with_linear_acceleration(delta)
+func move(_delta):
+	movement_function.call(_delta)
 	if print_velocity == true and parent.velocity != last_measurement:
 		print("Velocity: ", parent.velocity)
 		last_measurement = parent.velocity

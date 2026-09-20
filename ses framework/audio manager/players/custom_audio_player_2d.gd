@@ -1,7 +1,7 @@
 extends AudioStreamPlayer2D
 class_name CustomAudioStreamPlayer2D
 
-var se_id: SoundEffect.ids
+var se_id: SoundEffect.id
 var number: int
 
 func _ready():
@@ -12,7 +12,7 @@ func print_number():
 	
 
 
-func _on_kill(id: SoundEffect.ids, rolling_number):
+func _on_kill(id: SoundEffect.id, rolling_number):
 	if id != se_id:
 		return
 	elif number == rolling_number:

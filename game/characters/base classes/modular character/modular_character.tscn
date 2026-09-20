@@ -2,21 +2,51 @@
 
 [ext_resource type="Script" uid="uid://cs5c8g16c6unt" path="res://game/characters/base classes/modular character/modular_character.gd" id="1_ygd5a"]
 [ext_resource type="PackedScene" uid="uid://by3vjkun8xjde" path="res://game/characters/character modules/scenes/HealthModule.tscn" id="2_f6atd"]
+[ext_resource type="Script" uid="uid://0fyjihlpmqwt" path="res://game/characters/base classes/ability_sheet_base.gd" id="2_yomxm"]
 [ext_resource type="PackedScene" uid="uid://d0v3r03qtpxv1" path="res://game/characters/character modules/scenes/HurtboxModule.tscn" id="3_yomxm"]
 [ext_resource type="PackedScene" uid="uid://b3jtf0i16k6yn" path="res://game/characters/character modules/scenes/MovementModule.tscn" id="4_un0we"]
 [ext_resource type="PackedScene" uid="uid://cs4u0c3103it4" path="res://game/characters/character modules/scenes/HandsModule.tscn" id="5_2uwej"]
+[ext_resource type="Script" uid="uid://2w168rypja6x" path="res://game/characters/character modules/scripts/hands_module.gd" id="7_un0we"]
+[ext_resource type="PackedScene" uid="uid://d78svu3khygp" path="res://game/characters/character modules/scenes/AbilityModule.tscn" id="8_2uwej"]
+[ext_resource type="PackedScene" uid="uid://b3pc2xmw15uit" path="res://game/characters/character modules/scenes/CpuControlModule.tscn" id="9_5m5ms"]
+[ext_resource type="Texture2D" uid="uid://bhrlendu28q4s" path="res://ses framework/icon.svg" id="10_3vmmf"]
 
-[node name="ModularCharacter" type="CharacterBody2D" unique_id=71842574 node_paths=PackedStringArray("health_module", "hurtbox_module", "movement_module")]
+[sub_resource type="Resource" id="Resource_un0we"]
+script = ExtResource("2_yomxm")
+sheet_name = null
+ability_fire_primary = null
+ability_fire_secondary = null
+ability_ability_primary = null
+ability_ability_secondary = null
+ability_ability_defensive = null
+ability_ability_ultimate = null
+ability_sheet_dict = null
+metadata/_custom_type_script = "uid://0fyjihlpmqwt"
+
+[node name="ModularCharacter" type="CharacterBody2D" unique_id=71842574 node_paths=PackedStringArray("control_module", "health_module", "hurtbox_module", "movement_module", "hands_module", "ability_module")]
 script = ExtResource("1_ygd5a")
 use_player_input = true
+control_module = NodePath("CpuControlModule")
 health_module = NodePath("HealthModule")
 hurtbox_module = NodePath("HurtboxModule")
 movement_module = NodePath("MovementModule")
+hands_module = NodePath("HandsModule")
+ability_module = NodePath("AbilityModule")
+ability_sheet = SubResource("Resource_un0we")
 
 [node name="HealthModule" parent="." unique_id=855856564 instance=ExtResource("2_f6atd")]
 
 [node name="HurtboxModule" parent="." unique_id=1600100311 instance=ExtResource("3_yomxm")]
 
-[node name="MovementModule" parent="." unique_id=1257682665 instance=ExtResource("4_un0we")]
+[node name="MovementModule" parent="." unique_id=1257682665 node_paths=PackedStringArray("parent") instance=ExtResource("4_un0we")]
+parent = NodePath("..")
 
 [node name="HandsModule" parent="." unique_id=1886839405 instance=ExtResource("5_2uwej")]
+script = ExtResource("7_un0we")
+
+[node name="AbilityModule" parent="." unique_id=1147781833 instance=ExtResource("8_2uwej")]
+
+[node name="CpuControlModule" parent="." unique_id=1603715334 instance=ExtResource("9_5m5ms")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2079152533]
+texture = ExtResource("10_3vmmf")

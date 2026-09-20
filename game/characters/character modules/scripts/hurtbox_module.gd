@@ -1,8 +1,6 @@
 extends CharacterModule
 class_name HurtboxModule
 
-@export var Parent: Node2D
-@export var health_module: HealthModule
 
 signal received_damage(damage)
 

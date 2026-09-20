@@ -1,34 +1,35 @@
 [gd_scene format=3 uid="uid://ddrwex1a6a73x"]
 
-[ext_resource type="Script" uid="uid://bnjuxlmearrre" path="res://game/main/main.gd" id="1_80nbo"]
-[ext_resource type="Script" uid="uid://dnnwckgduqtm2" path="res://game/main/level_res.gd" id="2_ub0sj"]
-[ext_resource type="Script" uid="uid://lgtbllirj621" path="res://game/main/menu_res.gd" id="3_0fqga"]
+[ext_resource type="Script" uid="uid://bnjuxlmearrre" path="res://game/main/root.gd" id="1_yawwh"]
+[ext_resource type="Script" uid="uid://dnnwckgduqtm2" path="res://game/main/level_res.gd" id="2_ffndu"]
+[ext_resource type="Script" uid="uid://lgtbllirj621" path="res://game/main/menu_res.gd" id="3_w7xqm"]
 
 [sub_resource type="Resource" id="Resource_0fqga"]
-script = ExtResource("2_ub0sj")
+script = ExtResource("2_ffndu")
 selected_id = 2
 name = "Test Environment"
 path = "res://test_environments/test_environment.tscn"
 metadata/_custom_type_script = "uid://dnnwckgduqtm2"
 
 [sub_resource type="Resource" id="Resource_vsost"]
-script = ExtResource("3_0fqga")
+script = ExtResource("3_w7xqm")
 metadata/_custom_type_script = "uid://lgtbllirj621"
 
 [sub_resource type="Resource" id="Resource_kcxhb"]
-script = ExtResource("3_0fqga")
+script = ExtResource("3_w7xqm")
 selected_id = 1
 path = "res://test_environments/test_menu.tscn"
 metadata/_custom_type_script = "uid://lgtbllirj621"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63c7r"]
 
-[node name="Main" type="Node" unique_id=1317304314]
-script = ExtResource("1_80nbo")
-levels = Array[ExtResource("2_ub0sj")]([SubResource("Resource_0fqga")])
-menus = Array[ExtResource("3_0fqga")]([SubResource("Resource_vsost"), SubResource("Resource_kcxhb")])
+[node name="root" type="Node" unique_id=1317304314]
+script = ExtResource("1_yawwh")
+levels = Array[ExtResource("2_ffndu")]([SubResource("Resource_0fqga")])
+menus = Array[ExtResource("3_w7xqm")]([SubResource("Resource_vsost"), SubResource("Resource_kcxhb")])
 
 [node name="GameplayLayer" type="Area2D" parent="." unique_id=221935356]
+unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameplayLayer" unique_id=1157908464]
 shape = SubResource("RectangleShape2D_63c7r")
@@ -36,6 +37,7 @@ shape = SubResource("RectangleShape2D_63c7r")
 [node name="HudCanvasLayer" type="CanvasLayer" parent="." unique_id=136368108]
 
 [node name="Hud" type="Control" parent="HudCanvasLayer" unique_id=2043936851]
+unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -44,6 +46,7 @@ offset_bottom = 40.0
 [node name="GuiCanvasLayer" type="CanvasLayer" parent="." unique_id=406008705]
 
 [node name="GuiLayer" type="Control" parent="GuiCanvasLayer" unique_id=2110290746]
+unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

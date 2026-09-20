@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dkirug7bucy5f"]
+
+[ext_resource type="Script" uid="uid://dkdk38q1ldupw" path="res://game/characters/abilities/scripts/fire_primary.gd" id="1_y5rur"]
+
+[node name="FirePrimary" type="Node2D" unique_id=395664429]
+script = ExtResource("1_y5rur")
+selected_id = 1
+activation_type = 4
+metadata/_custom_type_script = "uid://bd2qbvycffqec"

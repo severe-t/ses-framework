@@ -1,13 +1,7 @@
 [gd_scene format=3 uid="uid://ppnmt2fmibkl"]
 
-[ext_resource type="Script" uid="uid://0fyjihlpmqwt" path="res://game/characters/ability sheets/base_class/ability_sheet_base.gd" id="1_pamg0"]
+[ext_resource type="Script" uid="uid://0fyjihlpmqwt" path="res://game/characters/base classes/ability_sheet_base.gd" id="1_pamg0"]
 
 [node name="AbilitySheetEditor" type="Node" unique_id=9187982]
 script = ExtResource("1_pamg0")
-sheet_name = "Jesse default test"
-ability_fire_primary = 1
-ability_fire_secondary = 2
-ability_ability_primary = 5
-ability_ability_secondary = 7
-ability_ability_defensive = 4
-ability_ability_ultimate = 6
+sheet_name = "empty"

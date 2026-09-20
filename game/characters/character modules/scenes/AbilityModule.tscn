@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d78svu3khygp"]
+
+[ext_resource type="Script" uid="uid://cyh2q3u7ac1w5" path="res://game/characters/character modules/scripts/ability_module.gd" id="1_0ti6d"]
+
+[node name="AbilityModule" type="Node2D" unique_id=1147781833]
+script = ExtResource("1_0ti6d")

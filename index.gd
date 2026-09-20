@@ -77,7 +77,7 @@ const _categories: Dictionary = {
 	Category.SFX: _sound_effects,
 	Category.BGM: _background_music,
 	Category.BGS: _background_sound,
-
+	Category.ABILITY_SHEET: _ability_sheet,
 }
 
 
@@ -87,12 +87,12 @@ static var big_dict: Dictionary
 static var index_ready: bool = false
 
 
-static func _static_init():
+func _init():
 	smart_merge()
 	index_ready = true
 
 
-static func smart_merge():
+func smart_merge():
 	for c in Category.size():
 		var folder_path = _paths[c]
 		for id in _categories[c]:
@@ -120,7 +120,7 @@ const _hud: Dictionary = {}
 const _sound_effects: Dictionary = {}
 const _background_music: Dictionary = {}
 const _background_sound: Dictionary = {}
-
+const _ability_sheet: Dictionary = {}
 
 
 #	Tekstiavaimet alunperin konsolin vuoksi
@@ -137,7 +137,3 @@ const _data: Dictionary[String, String] = {
 	"test_9": "res://scenes/gui/menus/test_menu.tscn",
 }
 
-
-
-var abilities: Dictionary	#	Preload path
-var ability_preloads: Dictionary	#	Preload path
