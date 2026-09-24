@@ -1,5 +1,5 @@
 extends Resource
-class_name Command
+class_name ShitCommand
 
 var command_name: String
 var command_callable: Callable

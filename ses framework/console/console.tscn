@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://lvu5lukynfbv"]
 
-[ext_resource type="Script" uid="uid://bspa01vpotjv2" path="res://ses framework/console/console.gd" id="1_42x45"]
+[ext_resource type="Script" uid="uid://c7sqvh346j1kv" path="res://ses framework/master console/terminal.gd" id="1_mtn8y"]
 [ext_resource type="FontFile" uid="uid://bv62rsj5ijyh0" path="res://ses framework/fonts/robotomono/RobotoMono-Regular.ttf" id="2_sjluo"]
 [ext_resource type="FontFile" uid="uid://keb5spfkx1vd" path="res://ses framework/fonts/robotomono/RobotoMono-Bold.ttf" id="3_hedou"]
 [ext_resource type="FontFile" uid="uid://r666b03lc6pi" path="res://ses framework/fonts/robotomono/RobotoMono-BoldItalic.ttf" id="4_lk25g"]
@@ -32,8 +32,7 @@ border_color = Color(1, 0, 0.78431374, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=199760045]
 layer = 99
-visible = false
-script = ExtResource("1_42x45")
+script = ExtResource("1_mtn8y")
 user_input_color = Color(1.2700006, 0, 0.9991149, 1)
 scroll_bar_color = Color(1, 0, 0, 1)
 
@@ -89,7 +88,7 @@ theme_override_font_sizes/mono_font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_sjluo")
 bbcode_enabled = true
 text = "[b]Severi's Essential Systems Framework
-Version 0.1.1
+Version 0.2.1
 Severe Entertainment - All lefts deserved[/b]
 "
 scroll_following = true

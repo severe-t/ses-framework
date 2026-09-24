@@ -380,7 +380,12 @@ func load_json(path):
 		return null
 	return result
 
-
+func _get_datetime_string_formatted(utc: bool = false, spacing: String = "-", splitter: String = "T"):
+	var dt = Time.get_datetime_dict_from_system(utc)
+	var dt_str: String = "%04d"+spacing+"%02d"+spacing+"%02d"+splitter+"%02d"+spacing+"%02d"+spacing+"%02d" % [
+		dt.year, dt.month, dt.day,	dt.hour, dt.minute, dt.second
+	]
+	return dt_str
 
 func get_datetime_string_formatted(utc: bool = false):
 	var dt = Time.get_datetime_dict_from_system(utc)

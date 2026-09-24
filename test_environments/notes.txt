@@ -1,0 +1,20 @@
+MasterConsole API:
+
+frontend:
+	backend only:
+		print_text()
+		new_line()
+
+
+backend:
+	kaikki:
+		print_to_console()
+		connect_signal()
+		disconnect_signal()
+	frontend only:
+		terminal_input()
+
+
+command:
+	backend only:
+		execute()
